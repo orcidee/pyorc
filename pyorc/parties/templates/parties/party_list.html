@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <ul>
+    {% for party in party_list %}
+      <li>Party {{ party.id }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

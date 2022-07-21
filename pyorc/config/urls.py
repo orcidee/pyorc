@@ -9,6 +9,7 @@ admin.autodiscover()
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="base.html")),
+    path("parties/", include("pyorc.parties.urls")),
     path("admin/", admin.site.urls),
 ]
 

@@ -1,9 +1,12 @@
 from contextlib import contextmanager
 from io import StringIO
 
+from django.contrib.auth import get_user_model
 from django.core import management
 from django.core.management.base import BaseCommand
 from django.db import connection
+
+User = get_user_model()
 
 
 def reset_db():
@@ -47,3 +50,10 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         with self.print_step("Resetting the database..."):
             reset_db()
+
+        with self.print_step("Create a superuser..."):
+            User.objects.create_superuser(
+                username="admin",
+                password="admin",
+                email="admin@orcidee.ch",
+            )
