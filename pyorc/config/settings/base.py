@@ -58,9 +58,8 @@ SECRET_KEY = get_env_variable("SECRET_KEY", "")
 
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.Argon2PasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2PasswordHasher"
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
 ]
-
 
 
 SILENCED_SYSTEM_CHECKS = [
@@ -151,14 +150,15 @@ TEMPLATES = [
 ################
 
 INSTALLED_APPS = (
-    "pyorc.core.apps.CoreConfig",
-    "pyorc.accounts.apps.AccountsConfig",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.admin",
     "django.contrib.staticfiles",
     "django.contrib.messages",
+    "pyorc.core.apps.CoreConfig",
+    "pyorc.accounts.apps.AccountsConfig",
+    "pyorc.parties.apps.PartiesConfig",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
