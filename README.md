@@ -48,6 +48,12 @@ You can automatically fix all the offenses tools are capable of by running:
 npm run format
 ```
 
+## Fixtures
+To start the project with test data, run the following command in the backend container (`docker-compose exec backend bash` first) :
+```bash
+./manage.py fixturize
+```
+It will reset the database, run the migrations and create a superuser `admin`/`admin`.
 ## Automated tests
 
 To run backend tests and lint checks, run `scripts/run_tests.sh` in the `backend` container:
