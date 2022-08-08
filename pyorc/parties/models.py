@@ -4,6 +4,7 @@ from datetime import datetime
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 STATUS_PENDING = 0
@@ -123,6 +124,11 @@ class Party(models.Model):
                 {"duration": _("La durée en minutes doit être un multiple de 30.")}
             )
 
+        if self.year != self.start.year:
+            raise ValidationError(
+                {"start": _("L'année ne correspond pas.")}
+            )
+
         if self.id and not str(self.id).startswith(str(self.year)):
             raise ValidationError(
                 {"year": _("L'année ne peut être modifiée une fois la partie crée.")}
@@ -154,3 +160,17 @@ class Party(models.Model):
             self.id = new_id
 
         super().save(*args, **kwargs)
+
+    @cached_property
+    def duration_display(self):
+        """
+        Format the duration in "hours minutes", example: 3h30'
+        """
+        if self.duration % 60 == 0:
+            return _("%sh") % int(self.duration / 60)
+        else:
+            return _("%sh%s'") % (int((self.duration - 30) / 60), "30")
+
+    def get_free_sits(self):
+        # FIXME To be implemented with subscriptions
+        return self.max_players

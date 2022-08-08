@@ -57,3 +57,6 @@ class Command(BaseCommand):
                 password="admin",
                 email="admin@orcidee.ch",
             )
+
+        with self.print_step("Loading parties examples..."):
+            management.call_command("loaddata", "initial_data.yaml", stdout=StringIO())

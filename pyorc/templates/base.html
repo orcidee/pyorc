@@ -1,4 +1,4 @@
-{% load static %}
+{% load i18n static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'dist/common.css' %}">
   </head>
   <body>
-    {% block body %}
-    It works!
-    {% endblock %}
-
+    <h1>{% block title %}{% trans "Orc'idée - Gestion des parties" %}{% endblock %}</h1>
+    <div class="main">
+      {% block content %}{% endblock %}
+    </div>
     <script type="text/javascript" src="{% static 'dist/common.js' %}"></script>
   </body>
 </html>

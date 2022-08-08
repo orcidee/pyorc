@@ -1,0 +1,34 @@
+{% load i18n %}
+
+<div class="border-t border-gray-800">
+  <div class="text-lg">{{ party.name }}</div>
+  <div class="text-sm text-gray-600">{{ party.party_type }}</div>
+  <div class="text-gray-600">
+    {% blocktrans with date=party.start|date:"d F" time=party.start|date:"H:i" duration=party.duration_display %}
+    Débute le {{ date }} à {{ time }}, durée: {{ duration }}
+    {% endblocktrans %}
+  </div>
+
+  {% if party.get_free_sits %}
+    <div class="">
+      {% trans "Place(s) restante(s): " %}{{ party.get_free_sits }}
+    </div>
+  {% endif %}
+
+  <div class="border-t border-gray-300">{{ party.description|truncatechars_html:500 }}</div>
+
+  <div class="border-t border-gray-300 text-sm">
+    {% trans "Status: " %}{{ party.get_status_display }}
+  </div>
+
+  <div class="text-sm">
+    {% trans "Nombre de table(s): " %}{{ party.table_amount }}
+  </div>
+
+  {% if request.user.is_staff and party.note_to_organizers %}
+    <div class="text-sm">
+      {% trans "Note aux orgas: " %}{{ party.note_to_organizers }}
+    </div>
+  {% endif %}
+
+</div>

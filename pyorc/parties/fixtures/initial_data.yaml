@@ -1,0 +1,158 @@
+- model: parties.partytype
+  pk: 1
+  fields:
+    name: Jeu de rôle
+    codename: roleplay
+    is_table_number_required: true
+    is_availability_required: true
+    order: 0
+- model: parties.partytype
+  pk: 2
+  fields:
+    name: Jeu de plateau
+    codename: boardgame
+    is_table_number_required: true
+    is_availability_required: false
+    order: 1
+- model: parties.partytype
+  pk: 3
+  fields:
+    name: GN'Idee
+    codename: gnidee
+    is_table_number_required: false
+    is_availability_required: false
+    order: 2
+- model: parties.partytype
+  pk: 4
+  fields:
+    name: JDR'idée
+    codename: jdridee
+    is_table_number_required: false
+    is_availability_required: false
+    order: 3
+- model: parties.partytype
+  pk: 5
+  fields:
+    name: Figurines
+    codename: figures
+    is_table_number_required: true
+    is_availability_required: false
+    order: 4
+- model: parties.partytype
+  pk: 6
+  fields:
+    name: Animation
+    codename: animation
+    is_table_number_required: false
+    is_availability_required: false
+    order: 5
+- model: parties.partytype
+  pk: 7
+  fields:
+    name: Autre
+    codename: other
+    is_table_number_required: false
+    is_availability_required: false
+    order: 6
+- model: parties.party
+  pk: 20221
+  fields:
+    created_at: 2022-08-08 16:23:49.174196+00:00
+    party_type: 1
+    name: Appel de Ctuhlhu 90'
+    scenario_name: Les Sables de l'Afghanistan
+    is_desk_registration: false
+    desk_name: ''
+    min_players: 3
+    max_players: 5
+    table_amount: 1
+    description: Kandahar, janvier 2009. Le Lt Richard Stanley et sa patrouille sont
+      chargés d'escorter un officier spécialisé en géologie dans le charmant Désert
+      de l'Enfer, une région encore plus aride que le restant de l'Afghanistan (et
+      c'est peu dire), probable zone de replis pour de nombreux groupes de talibans.
+      Mais qui pourrait receler une importante mine de cobalt...
+    note_to_organizers: ''
+    year: 2022
+    start: 2022-04-15 10:00:00+00:00
+    duration: 300
+    status: 0
+- model: parties.party
+  pk: 20222
+  fields:
+    created_at: 2022-08-08 16:24:56.282280+00:00
+    party_type: 2
+    name: 'Nains: La Chute De Karnarak'
+    scenario_name: ''
+    is_desk_registration: false
+    desk_name: ''
+    min_players: 3
+    max_players: 5
+    table_amount: 1
+    description: "\"Karnarak la belle, Karnarak la puissante, Karnarak la capitale
+      du Royaume d’Adamant.\r\n\r\nDepuis plus de mille ans, la citadelle se dresse
+      fièrement contre les horreurs qui se cachent derrière ses murs, dans la désolation
+      sans fin de Blackmore.\r\n\r\nMais maintenant, Karnarak se meurt.\r\n\r\nLa
+      prophétie d'Aldarak le Fou s'est réalisée. Ssin, le grand dragon noir, le fléau
+      des dieux, s'est réveillée. De son royaume de mort et de pestilence, elle crache
+      un flot ininterrompu de peaux vertes et de vermines, dans le but de soumettre
+      le monde libre à sa volonté.\r\n\r\nEt Karnarak est le dernier obstacle à franchir
+      pour atteindre son but.\"\r\n\r\n \r\n\r\nNains : La Chute De Karnarak est un
+      jeu de plateau entièrement coopératif pour 4 joueurs (et joueuses), mélangeant
+      le placement d'ouvriers et le \"Tower Defense\". Les joueurs incarnent des clans
+      nains qui doivent travailler ensemble afin d’organiser les défenses de la citadelle
+      contre les hordes de créatures venues la détruire. \r\n\r\nLes joueurs devront
+      envoyer leurs troupes contre les hordes ennemies et gérer leurs ressources afin
+      d’améliorer les défenses de la forteresse, forger de puissants objets et utiliser
+      la magie des runes et des glyphes pour empêcher les ennemis de pénétrer au cœur
+      de la citadelle.\r\n\r\nIl n’y a pas qu’une seule stratégie de victoire à Nains,
+      mais la collaboration reste au cœur du système de jeu. Les joueurs gagnent ou
+      perdent ensemble."
+    note_to_organizers: ''
+    year: 2022
+    start: 2022-04-15 14:00:00+00:00
+    duration: 240
+    status: 0
+- model: parties.party
+  pk: 20223
+  fields:
+    created_at: 2022-08-08 16:27:38.018895+00:00
+    party_type: 1
+    name: Sombre
+    scenario_name: ''
+    is_desk_registration: true
+    desk_name: Editions Soleil
+    min_players: null
+    max_players: null
+    table_amount: 1
+    description: "Samedi et dimanche, démonstrations flash (15 à 20 min) par son auteur
+      (Johan Scipion) sur le stand de Terres Etranges.\r\n\r\nPas de préinscriptions,
+      recrutement sur place.\r\n\r\nLe pitch ? Chaque partie de Sombre est un film
+      d'horreur imaginaire dont vous êtes la victime."
+    note_to_organizers: ''
+    year: 2021
+    start: 2021-04-15 08:00:00+00:00
+    duration: 120
+    status: 0
+- model: parties.party
+  pk: 20224
+  fields:
+    created_at: 2022-08-08 16:28:00.00000+00:00
+    party_type: 1
+    name: Monster of the Week
+    scenario_name: ''
+    is_desk_registration: true
+    desk_name: Editions Soleil
+    min_players: null
+    max_players: null
+    table_amount: 1
+    description: "Bienvenue dans Monster of the Week, jeu très inspirés des séries télé comme 
+      Buffy contre les vampires, Supernatural, X-Files ou encore Fringe, c'est-à-dire le genre de 
+      série où chaque épisode amène son nouveau monstre à combattre. Vous y incarnerez des 
+      archétypes classique de ce genre de série, allant de l'Élu au Monstre, en passant par 
+      le Professionnel ou simplement le type Ordinaire. Le système se veut simple et léger (2d6) 
+      et mise avant tout sur le fait que les personnages sont les héros de l'histoire."
+    note_to_organizers: "Pourriez-vous SVP me réserver une table accessible en fauteuil roulant? Merci."
+    year: 2022
+    start: 2022-04-15 08:00:00+00:00
+    duration: 150
+    status: 0

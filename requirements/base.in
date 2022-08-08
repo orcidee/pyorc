@@ -3,3 +3,4 @@ Django>=4.0,<4.1 # TODO: Update to 4.2 LTS when it is released (April 2023)
 psycopg2-binary
 dj_email_url
 argon2-cffi
+PyYAML

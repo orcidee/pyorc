@@ -1,9 +1,21 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block body %}
-  <ul>
+{% block title %}
+  {% trans "Liste des parties" %}
+{% endblock %}
+
+{% block content %}
+  {% include "parties/_party_list_filters.html" %}
+
+  <div class="party-sorters">
+    <div>TRI</div>
+  </div>
+
+  <div class="party-list">
     {% for party in party_list %}
-      <li>Party {{ party.id }}</li>
+      {% include "parties/_party_list_item.html" %}
     {% endfor %}
-  </ul>
+  </div>
+
 {% endblock %}

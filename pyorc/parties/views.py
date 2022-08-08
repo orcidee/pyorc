@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.views.generic import DetailView, ListView
 
 from pyorc.parties.models import Party
@@ -17,3 +19,9 @@ class PartyListView(ListView):
     """
 
     model = Party
+
+    def get_queryset(self):
+        """
+        Get parties of this year
+        """
+        return super().get_queryset().filter(year=datetime.now().year)

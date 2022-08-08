@@ -22,7 +22,7 @@ USE_TZ = True
 
 LANGUAGES = (
     ("fr", _("fr")),
-    ("en", _("en")),
+    # ("en", _("en")),
 )
 
 LOCALE_PATHS = ("locale/",)
