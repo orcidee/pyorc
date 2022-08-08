@@ -48,6 +48,9 @@ You can automatically fix all the offenses tools are capable of by running:
 npm run format
 ```
 
+### CSS
+Using the CSS framework **tailwind** : https://tailwindcss.com/docs/
+
 ## Fixtures
 To start the project with test data, run the following command in the backend container (`docker-compose exec backend bash` first) :
 ```bash
